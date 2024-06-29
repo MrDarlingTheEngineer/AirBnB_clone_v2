@@ -1,32 +1,19 @@
 #!/usr/bin/python3
-"""test module for class State"""
-
-import models
-import datetime
-import unittest
+""" """
+from tests.test_models.test_base_model import test_basemodel
+from models.state import State
 
 
-class StateTest(unittest.TestCase):
-    """tests the class State"""
+class test_state(test_basemodel):
+    """ """
 
-    def test_documentation(self):
-        """tests module and class docstring"""
-        self.assertIsNotNone(models.state.__doc__)
-        self.assertIsNotNone(models.state.State.__doc__)
+    def __init__(self, *args, **kwargs):
+        """ """
+        super().__init__(*args, **kwargs)
+        self.name = "State"
+        self.value = State
 
-    def test_class(self):
-        """test instance class"""
-        instance = models.state.State()
-        self.assertIsInstance(instance, models.state.State)
-
-    def test_type(self):
-        """test type of instance atributes"""
-        instance = models.state.State()
-        self.assertIsInstance(instance.id, str)
-        self.assertIsInstance(instance.created_at, datetime.datetime)
-        self.assertIsInstance(instance.updated_at, datetime.datetime)
-        self.assertIsInstance(instance.name, str)
-
-
-if __name__ == "__main__":
-    unittest.main()
+    def test_name3(self):
+        """ """
+        new = self.value()
+        self.assertEqual(type(new.name), str)

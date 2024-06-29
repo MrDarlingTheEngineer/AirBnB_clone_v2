@@ -1,32 +1,19 @@
 #!/usr/bin/python3
-"""test module for class Amenity"""
-
-import models
-import datetime
-import unittest
+""" """
+from tests.test_models.test_base_model import test_basemodel
+from models.amenity import Amenity
 
 
-class AmenityTest(unittest.TestCase):
-    """tests the class Amenity"""
+class test_Amenity(test_basemodel):
+    """ """
 
-    def test_documentation(self):
-        """tests module and class docstring"""
-        self.assertIsNotNone(models.amenity.__doc__)
-        self.assertIsNotNone(models.amenity.Amenity.__doc__)
+    def __init__(self, *args, **kwargs):
+        """ """
+        super().__init__(*args, **kwargs)
+        self.name = "Amenity"
+        self.value = Amenity
 
-    def test_class(self):
-        """test instance class"""
-        instance = models.amenity.Amenity()
-        self.assertIsInstance(instance, models.amenity.Amenity)
-
-    def test_type(self):
-        """test type of instance atributes"""
-        instance = models.amenity.Amenity()
-        self.assertIsInstance(instance.id, str)
-        self.assertIsInstance(instance.created_at, datetime.datetime)
-        self.assertIsInstance(instance.updated_at, datetime.datetime)
-        self.assertIsInstance(instance.name, str)
-
-
-if __name__ == "__main__":
-    unittest.main()
+    def test_name2(self):
+        """ """
+        new = self.value()
+        self.assertEqual(type(new.name), str)
