@@ -14,7 +14,7 @@ from fabric.api import env
 import re
 
 
-env.hosts = ['34.204.192.118', '44.200.73.243']
+env.hosts = ['54.87.210.123', '18.209.152.147']
 
 
 def do_pack():
